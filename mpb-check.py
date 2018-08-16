@@ -6,7 +6,7 @@ from sendgrid.helpers.mail import Email, Content, Mail
 
 def send_email(quantity):
     sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
-    from_email = Email("info@sendgrid.com")
+    from_email = Email("test@example.com")
     to_email = Email(os.environ.get('EMAIL_TO_NOTIFY'))
     subject = "MPB Check: the item you are monitoring is available"
     message = 'There are {0} items available at {1}'.format(quantity, os.environ.get('MPB_URL'))
